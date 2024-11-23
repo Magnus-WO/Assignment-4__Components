@@ -1,0 +1,12 @@
+:root {
+  /* Colors */
+  --main-background-color: #2164c9;
+  --secondary-background-color: #d2d1d1;
+
+  --component-default-color: #e8e8e8;
+  --component-hover-color: white;
+  --component-active-color: #b5b3b3;
+
+  /* font-size */
+  --font-size-medium: 1.3rem;
+}
