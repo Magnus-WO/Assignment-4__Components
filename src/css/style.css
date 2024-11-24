@@ -23,3 +23,30 @@
 .component__2 {
   font-size: 1.3rem;
 }
+
+.carousel {
+  border: 2px solid black;
+  height: 80%;
+  width: 50%;
+  position: relative;
+}
+.carousel-button {
+  border: none;
+  background: none;
+
+  position: absolute;
+  top: 50%;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  scale: 1.1;
+}
+.carousel-button--next {
+  right: 1rem;
+}
+
+.carousel-button--prev {
+  left: 1rem;
+}

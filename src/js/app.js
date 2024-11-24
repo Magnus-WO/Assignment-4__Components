@@ -14,6 +14,8 @@ const showcaseSection = document.querySelector(".component__showcase");
 main.append(showcaseSection);
 
 // Creating functions
+
+// Creating a navbar
 const createNavbar = () => {
   showcaseSection.textContent = "";
   const createdNavbar = document.createElement("nav");
@@ -26,18 +28,44 @@ const createNavbar = () => {
   const createdLink1 = document.createElement("a");
   createdLink1.textContent = "here";
   createdLink1.setAttribute("href", "./newPage.html");
-  navbarParagraph1.textContent = `It is used to navigate to different pages or to different places on the same page. Click here to go to a new page`;
+  navbarParagraph1.textContent = `Click here to go to a new page`;
 
   const navbarParagraph2 = document.createElement("p");
   const createdLink2 = document.createElement("a");
-  //   createdLink2.setAttribute("href");
+  // createdLink2.setAttribute("href");
   createdLink2.textContent = "here";
   navbarParagraph2.textContent = "Click here to go to a different page";
 
   createdNavbar.append(navbarHeader, navbarParagraph1, navbarParagraph2);
 };
 
-const createCarousel = () => {};
+// Creating a carousel
+const createCarousel = () => {
+  showcaseSection.textContent = "";
+
+  const nextButton = document.createElement("button");
+  nextButton.classList.add("carousel-button");
+  nextButton.classList.add("carousel-button--next");
+  nextButton.setAttribute("data", "next");
+  nextButton.textContent = "Next";
+
+  const prevButton = document.createElement("button");
+  prevButton.classList.add("carousel-button");
+  prevButton.classList.add("carousel-button--prev");
+  prevButton.textContent = "Previous";
+
+  const carousel = document.createElement("div");
+  carousel.classList.add("carousel");
+  showcaseSection.appendChild(carousel);
+  carousel.append(prevButton, nextButton);
+
+  const carouselButtons = [nextButton, prevButton];
+  carouselButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const offset = button.dataset === "next" ? +1 : -1;
+    });
+  });
+};
 
 const createCard = () => {};
 
@@ -57,5 +85,7 @@ const createAlert = (e) => {
 // Attaching event listeners
 
 navbarButton.addEventListener("click", createNavbar);
+
+carouselButton.addEventListener("click", createCarousel);
 
 alertButton.addEventListener("click", createAlert);
