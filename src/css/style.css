@@ -9,20 +9,31 @@
   width: 80%;
   height: 100vh;
 }
-
-.component__1 {
+/* Navbar------------------------------- */
+.showcase__navbar {
+  padding: 1rem;
   min-height: 10%;
   width: 60%;
+
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
 
   border: 2px solid black;
+  border-radius: 10px;
   background-color: var(--secondary-background-color);
+}
+
+.component__1:hover {
+  scale: 1.1;
 }
 
 .component__2 {
   font-size: 1.3rem;
 }
+
+/* Carousel------------------------------- */
 
 .carousel {
   height: 80%;
@@ -41,30 +52,6 @@
   top: 50%;
   font-size: large;
 }
-
-ul {
-  list-style: none;
-  height: 100%;
-  width: 100%;
-}
-
-li {
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-image {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  /* inset: 0; */
-  opacity: 0;
-  border-radius: 5px;
-}
-
-.carousel-image[data-active] {
-  opacity: 1;
-}
 .carousel-button:hover {
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
@@ -79,4 +66,77 @@ li {
 
 .carousel-button--prev {
   left: 1rem;
+}
+.carousel-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* inset: 0; */
+  opacity: 0;
+  border-radius: 5px;
+}
+
+.carousel-image[data-active] {
+  opacity: 1;
+}
+
+/* Card------------------------------- */
+.card {
+  height: 70%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: var(--secondary-background-color);
+}
+
+.card:hover {
+  scale: 1.1;
+}
+
+.card-image {
+  height: 80%;
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* Button------------------------------- */
+.created-button {
+  border: 1px dotted black;
+  border-radius: 10px;
+  height: 6rem;
+  width: 18rem;
+
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.created-button:hover {
+  cursor: pointer;
+}
+
+/* Form------------------------------- */
+.form {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  height: 90%;
+  width: 60%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+}
+
+.form-elements__container {
+  display: flex;
+  flex-direction: column;
 }
