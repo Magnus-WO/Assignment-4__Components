@@ -408,7 +408,7 @@ const createMediaController = () => {
   showcaseSection.appendChild(mediaContainer);
 };
 
-const createSearchField = () => {};
+const createModal = () => {};
 
 const createAlert = (e) => {
   showcaseSection.textContent = "";
@@ -441,8 +441,6 @@ navbarButton.addEventListener("click", createNavbar);
 
 carouselButton.addEventListener("click", createCarousel);
 
-alertButton.addEventListener("click", createAlert);
-
 cardButton.addEventListener("click", createCard);
 
 buttonButton.addEventListener("click", createButton);
@@ -450,3 +448,7 @@ buttonButton.addEventListener("click", createButton);
 formButton.addEventListener("click", createForm);
 
 mediaButton.addEventListener("click", createMediaController);
+
+alertButton.addEventListener("click", createAlert);
+
+modalButton.addEventListener("click", createModal);
