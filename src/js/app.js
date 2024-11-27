@@ -182,6 +182,7 @@ const createForm = () => {
   const formInfo = document.createElement("p");
   formInfo.textContent = `This is a simple (and ugly) form, input the details as specified below, then click the "Submit" button`;
   formInfo.style.textAlign = "center";
+
   //Name input
   const nameContainer = document.createElement("div");
   nameContainer.classList.add("form-elements__container");
@@ -312,7 +313,7 @@ const createForm = () => {
 
     console.log(radioChoice);
 
-    form.reset;
+    form.reset();
   });
 
   form.append(
@@ -374,22 +375,33 @@ const createMediaController = () => {
   prevButton.textContent = "Previous";
   const nextButton = document.createElement("button");
   nextButton.dataset.audioButton = "next";
-  nextButton.textContent = "Next";
+  nextButton.textContent = "Load";
 
   const audioButtons = [prevButton, nextButton];
   let offset = 0;
   audioButtons.forEach((button) => {
+    button.classList.add("audio-button");
     button.addEventListener("click", () => {
       offset = button.dataset.audioButton === "next" ? offset + 1 : offset - 1;
+      prevButton.style.visibility = "hidden";
 
       for (let i = offset - 1; i === offset - 1; i++) {
         audio = audioArray[i];
-        audioTitle.textContent = audio.title;
+        audioTitle.textContent = `${i + 1}. ${audio.title}`;
         audioController.setAttribute("src", audio.src);
         console.log(audio);
 
         if (i === audioArray.length - 1) {
-          offset = 0;
+          nextButton.style.visibility = "hidden";
+        } else {
+          nextButton.style.visibility = "visible";
+          nextButton.textContent = "Next";
+        }
+
+        if (i === 0) {
+          prevButton.style.visibility = "hidden";
+        } else {
+          prevButton.style.visibility = "visible";
         }
       }
       console.log(offset);
@@ -408,7 +420,36 @@ const createMediaController = () => {
   showcaseSection.appendChild(mediaContainer);
 };
 
-const createModal = () => {};
+const createModal = () => {
+  showcaseSection.textContent = "";
+  //Creating the modal components
+  const modalContainer = document.createElement("div");
+  modalContainer.classList.add("modal-container");
+
+  const closeModalButton = document.createElement("button");
+  closeModalButton.classList.add("modal__close-button");
+  closeModalButton.textContent = "X";
+
+  const openModalButton = document.createElement("button");
+  openModalButton.classList.add("modal__open-button");
+  openModalButton.textContent = "Click to open a modal";
+
+  const modalInfo = document.createElement("p");
+  modalInfo.textContent = "You opened a modal!";
+
+  modalContainer.append(modalInfo, closeModalButton);
+  showcaseSection.append(modalContainer, openModalButton);
+
+  openModalButton.addEventListener("click", () => {
+    modalContainer.style.visibility = "visible";
+    openModalButton.style.visibility = "hidden";
+  });
+
+  closeModalButton.addEventListener("click", () => {
+    modalContainer.style.visibility = "hidden";
+    openModalButton.style.visibility = "visible";
+  });
+};
 
 const createAlert = (e) => {
   showcaseSection.textContent = "";
@@ -449,6 +490,6 @@ formButton.addEventListener("click", createForm);
 
 mediaButton.addEventListener("click", createMediaController);
 
-alertButton.addEventListener("click", createAlert);
-
 modalButton.addEventListener("click", createModal);
+
+alertButton.addEventListener("click", createAlert);

@@ -22,7 +22,7 @@
   align-items: center;
 
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   background-color: var(--secondary-background-color);
 }
 
@@ -43,7 +43,7 @@
 }
 .carousel-button {
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
 
@@ -74,7 +74,7 @@
   position: absolute;
   /* inset: 0; */
   opacity: 0;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 
 .carousel-image[data-active] {
@@ -92,7 +92,7 @@
   align-items: center;
 
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: var(--spacing-medium);
 
   background-color: var(--secondary-background-color);
@@ -108,13 +108,13 @@
 .card-image {
   height: 70%;
   width: 65%;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 /* Button------------------------------- */
 .created-button {
   border: 1px dotted black;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   height: 6rem;
   width: 18rem;
 
@@ -128,7 +128,7 @@
 /* Form------------------------------- */
 .form {
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   background-color: white;
   height: 90%;
   width: 60%;
@@ -157,6 +157,7 @@
   width: 4rem;
 
   border: none;
+  border-radius: var(--border-radius);
   background-color: var(--main-background-color);
   color: var(--font-color1);
   font-size: var(--font-size-base);
@@ -174,6 +175,7 @@
   justify-content: center;
   gap: var(--spacing-medium);
   border: 2px dotted black;
+  border-radius: var(--border-radius);
 }
 /* Media------------------------------- */
 .media-container {
@@ -213,10 +215,11 @@
 .media__button-container button {
   height: 2rem;
   width: 8rem;
-  border-radius: 50px;
+  border-radius: var(--border-radius-large);
   border: none;
   background-color: var(--main-background-color);
   color: var(--font-color1);
+  cursor: pointer;
 }
 
 .media__button-container button:hover {
@@ -224,12 +227,75 @@
   opacity: 0.9;
 }
 
+/* Modal------------------------------- */
+.modal-container {
+  z-index: 1;
+  border-radius: var(--border-radius);
+  height: 20rem;
+  width: 40rem;
+
+  box-shadow: 10px 10px 20px black;
+  visibility: hidden;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.modal-container p {
+  background-color: var(--main-background-color);
+  border-radius: var(--border-radius);
+  width: 100%;
+  height: 85%;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: var(--font-size-medium);
+  color: var(--font-color1);
+}
+
+.modal-container button {
+  border: none;
+  height: 15%;
+  width: 2rem;
+
+  font-size: var(--font-size-base);
+  color: var(--main-background-color);
+  cursor: pointer;
+}
+
+.modal-container button:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: var(--component-hover-color);
+}
+
+.modal__open-button {
+  background-color: var(--main-background-color);
+  color: var(--font-color1);
+  border: none;
+  border-radius: var(--border-radius);
+
+  height: 4rem;
+  width: 12rem;
+  cursor: pointer;
+}
+
+.modal__open-button:hover {
+  opacity: 0.7;
+}
+
 /* Alert------------------------------- */
 .alert__button {
   height: 10%;
   width: 30%;
 
-  border-radius: 50px;
+  border-radius: var(--border-radius-large);
   border: none;
   background-color: var(--main-background-color);
   color: var(--font-color1);
