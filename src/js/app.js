@@ -5,7 +5,7 @@ const cardButton = document.querySelector(".navbar__button--card");
 const buttonButton = document.querySelector(".navbar__button--button");
 const formButton = document.querySelector(".navbar__button--form");
 const mediaButton = document.querySelector(".navbar__button--media-controller");
-const searchButton = document.querySelector(".navbar__button--search-input");
+const modalButton = document.querySelector(".navbar__button--modal");
 const alertButton = document.querySelector(".navbar__button--alert");
 
 // Fetching and appending the showcase section
@@ -24,30 +24,41 @@ const createNavbar = () => {
 
   const navbarHeader = document.createElement("h2");
   navbarHeader.textContent = "This is a navbar.";
-  const navbarParagraph1 = document.createElement("p");
-  const createdLink1 = document.createElement("a");
-  createdLink1.textContent = "link";
-  createdLink1.setAttribute("href", "./newPage.html");
-  navbarParagraph1.textContent = `Click here to go to a new page`;
 
-  const navbarParagraph2 = document.createElement("p");
-  const createdLink2 = document.createElement("a");
-  createdLink2.setAttribute("href", "./newPage.html");
-  createdLink2.textContent = "link";
-  navbarParagraph2.textContent = "Click here to go to a different page";
+  const link1 = document.createElement("a");
+  link1.setAttribute("href", "https://www.google.com/");
+  link1.setAttribute("target", "");
+  link1.textContent = "Google";
 
-  createdNavbar.append(
-    navbarHeader,
-    navbarParagraph1,
-    navbarParagraph2,
-    createdLink1,
-    createdLink2
-  );
+  const link2 = document.createElement("a");
+  link2.setAttribute("href", "https://stackoverflow.com/");
+  link2.setAttribute("href", "");
+  link2.textContent = "Stackoverflow";
+
+  const link3 = document.createElement("a");
+  link3.setAttribute("href", "https://www.youtube.com/");
+  link3.setAttribute("href", "");
+  link3.textContent = "Youtube";
+
+  const link4 = document.createElement("a");
+  link4.setAttribute("href", "https://theuselessweb.com/");
+  link4.setAttribute("href", "");
+  link4.textContent = "The Useless Web";
+
+  createdNavbar.append(navbarHeader, link1, link2, link3, link4);
+
+  createdNavbar.addEventListener("");
 };
 
 // Creating a carousel
 const createCarousel = () => {
   showcaseSection.textContent = "";
+
+  const carouselHeader = document.createElement("h3");
+  carouselHeader.textContent = "This is a carousel";
+
+  const carouselInfo = document.createElement("p");
+  carouselInfo.textContent = "It is often used to display images";
 
   const nextButton = document.createElement("button");
   nextButton.classList.add("carousel-button");
@@ -88,7 +99,13 @@ const createCarousel = () => {
   const carousel = document.createElement("div");
   carousel.classList.add("carousel");
   showcaseSection.appendChild(carousel);
-  carousel.append(imageContainer, prevButton, nextButton);
+  carousel.append(
+    carouselHeader,
+    carouselInfo,
+    imageContainer,
+    prevButton,
+    nextButton
+  );
 
   const carouselButtons = [nextButton, prevButton];
   carouselButtons.forEach((button) => {
@@ -125,7 +142,7 @@ const createCard = () => {
   cardParagraph1.textContent = "This is a card.";
   const cardParagraph2 = document.createElement("p");
   cardParagraph2.textContent =
-    "It is usually used to contain elements that are connected to each other.";
+    "It is usually used to contain elements that are related to each other.";
   card.append(cardImage, cardParagraph1, cardParagraph2);
 };
 
@@ -168,6 +185,7 @@ const createForm = () => {
   //Name input
   const nameContainer = document.createElement("div");
   nameContainer.classList.add("form-elements__container");
+
   const nameInput = document.createElement("input");
   nameInput.setAttribute("type", "text");
   nameInput.setAttribute("id", "nameInput");
@@ -199,20 +217,26 @@ const createForm = () => {
   const radioContainer = document.createElement("div");
   radioContainer.classList.add("form-elements__container");
 
+  const radioHeader = document.createElement("h3");
+  radioHeader.textContent = "Select size:";
+
   const radioInput1 = document.createElement("input");
   radioInput1.setAttribute("type", "radio");
   radioInput1.setAttribute("id", "radioInput1");
   radioInput1.setAttribute("name", "radioInput");
+  radioInput1.setAttribute("value", "small");
 
   const radioInput2 = document.createElement("input");
   radioInput2.setAttribute("type", "radio");
   radioInput2.setAttribute("id", "radioInput2");
   radioInput2.setAttribute("name", "radioInput");
+  radioInput2.setAttribute("value", "medium");
 
   const radioInput3 = document.createElement("input");
   radioInput3.setAttribute("type", "radio");
   radioInput3.setAttribute("id", "radioInput3");
   radioInput3.setAttribute("name", "radioInput");
+  radioInput3.setAttribute("value", "large");
 
   const radioLabel1 = document.createElement("label");
   radioLabel1.setAttribute("for", "radioInput1");
@@ -226,25 +250,189 @@ const createForm = () => {
   radioLabel3.setAttribute("for", "radioInput1");
   radioLabel3.textContent = "large";
 
+  // const radioValue = radioChoice.value;
+
   radioLabel1.append(radioInput1);
   radioLabel2.append(radioInput2);
   radioLabel3.append(radioInput3);
-  radioContainer.append(radioLabel1, radioLabel2, radioLabel3);
+  radioContainer.append(radioHeader, radioLabel1, radioLabel2, radioLabel3);
 
   //Option selector
   const optionsContainer = document.createElement("div");
   optionsContainer.classList.add("form-elements__container");
 
-  form.append(formInfo, nameContainer, emailContainer, radioContainer);
+  const optionsHeader = document.createElement("h3");
+  optionsHeader.textContent = "select an item from the list:";
+
+  const optionSelect = document.createElement("select");
+  optionSelect.setAttribute("id", "select");
+
+  const option1 = document.createElement("option");
+  option1.setAttribute("value", "tshirt-black");
+  option1.textContent = "T-shirt (Black)";
+
+  const option2 = document.createElement("option");
+  option2.setAttribute("value", "tshirt-white");
+  option2.textContent = "T-shirt (White)";
+
+  const option3 = document.createElement("option");
+  option3.setAttribute("value", "Hoodie");
+  option3.textContent = "Hoodie ";
+
+  optionSelect.append(option1, option2, option3);
+  optionsContainer.append(optionsHeader, optionSelect);
+
+  // Submit button
+  const submitButton = document.createElement("button");
+  submitButton.classList.add("form__submit-button");
+  submitButton.textContent = "Submit";
+
+  //Feedback Container
+  const feedbackContainer = document.createElement("div");
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    submitButton.style.backgroundColor = "#2164c9";
+
+    feedbackContainer.textContent = "";
+    feedbackContainer.classList.add("form__feedback");
+
+    const fullnameParagraph = document.createElement("p");
+    fullnameParagraph.textContent = `Your name is ${nameInput.value}`;
+    const emailParagraph = document.createElement("p");
+    emailParagraph.textContent = `Your email is ${emailInput.value}`;
+
+    const radioChoice = Array.from(
+      document.getElementsByName("radioInput")
+    ).find((input) => input.checked);
+
+    const productChoice = document.createElement("p");
+    productChoice.textContent = `You chose ${optionSelect.value} in size ${radioChoice.value}`;
+    feedbackContainer.append(fullnameParagraph, emailParagraph, productChoice);
+
+    console.log(radioChoice);
+
+    form.reset;
+  });
+
+  form.append(
+    formInfo,
+    nameContainer,
+    emailContainer,
+    radioContainer,
+    optionsContainer,
+    submitButton,
+    feedbackContainer
+  );
 };
 
-const createMediaController = () => {};
+const createMediaController = () => {
+  showcaseSection.textContent = "";
+  const audioArray = [
+    {
+      title: "Dawn",
+      src: "./assets/audio/Dawn.mp3",
+    },
+    {
+      title: "Breaking Point",
+      src: "./assets/audio/Breaking Point.mp3",
+    },
+    {
+      title: "Fading",
+      src: "./assets/audio/Fading.mp3",
+    },
+    {
+      title: "Embers",
+      src: "./assets/audio/Embers.mp3",
+    },
+    {
+      title: "Relentless",
+      src: "./assets/audio/ Relentless.mp3",
+    },
+  ];
+
+  const mediaContainer = document.createElement("div");
+  mediaContainer.classList.add("media-container");
+  const mediaImage = document.createElement("img");
+  mediaImage.setAttribute("src", "./assets/images/Dawn@0.5x.png");
+  mediaImage.classList.add("media__image");
+
+  const audioTitle = document.createElement("h3");
+
+  const audioContainer = document.createElement("div");
+  audioContainer.classList.add("media-container__audio");
+
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("media__button-container");
+
+  const audioController = document.createElement("audio");
+  // audioController.setAttribute("src", "./assets/audio/Embers.mp3");
+  audioController.setAttribute("controls", true);
+  audioController.classList.add("audio-player");
+
+  const prevButton = document.createElement("button");
+  prevButton.textContent = "Previous";
+  const nextButton = document.createElement("button");
+  nextButton.dataset.audioButton = "next";
+  nextButton.textContent = "Next";
+
+  const audioButtons = [prevButton, nextButton];
+  let offset = 0;
+  audioButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      offset = button.dataset.audioButton === "next" ? offset + 1 : offset - 1;
+
+      for (let i = offset - 1; i === offset - 1; i++) {
+        audio = audioArray[i];
+        audioTitle.textContent = audio.title;
+        audioController.setAttribute("src", audio.src);
+        console.log(audio);
+
+        if (i === audioArray.length - 1) {
+          offset = 0;
+        }
+      }
+      console.log(offset);
+      console.log(audioArray.length);
+    });
+    button.addEventListener("mousedown", () => {
+      button.style.backgroundColor = "black";
+    });
+    button.addEventListener("mouseup", () => {
+      button.style.backgroundColor = "#2164c9";
+    });
+  });
+  buttonContainer.append(prevButton, nextButton);
+  audioContainer.append(audioTitle, audioController, buttonContainer);
+  mediaContainer.append(mediaImage, audioContainer);
+  showcaseSection.appendChild(mediaContainer);
+};
 
 const createSearchField = () => {};
 
 const createAlert = (e) => {
   showcaseSection.textContent = "";
-  alert("This is an alert");
+
+  const button = document.createElement("button");
+  button.classList.add("alert__button");
+  button.textContent = "Click me for an alert";
+
+  showcaseSection.appendChild(button);
+
+  button.addEventListener("click", () => {
+    if (button.textContent === "Click me for an alert") {
+      alert("This is an alert");
+      button.textContent = "Click me for a new alert";
+    } else if (button.textContent === "Click me for a new alert") {
+      alert("You look nice today :)");
+    }
+  });
+  button.addEventListener("mousedown", () => {
+    button.style.backgroundColor = "black";
+  });
+  button.addEventListener("mouseup", () => {
+    button.style.backgroundColor = "#2164c9";
+  });
 };
 
 // Attaching event listeners
@@ -260,3 +448,5 @@ cardButton.addEventListener("click", createCard);
 buttonButton.addEventListener("click", createButton);
 
 formButton.addEventListener("click", createForm);
+
+mediaButton.addEventListener("click", createMediaController);

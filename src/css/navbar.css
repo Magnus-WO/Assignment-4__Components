@@ -21,7 +21,7 @@
 .navbar__button {
   border: none;
   background-color: transparent;
-  color: white;
+  color: var(--font-color1);
   font-size: var(--font-size-medium);
   width: auto;
 }
