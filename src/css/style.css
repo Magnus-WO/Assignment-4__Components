@@ -80,10 +80,10 @@
 .carousel-button--next {
   right: 1rem;
 }
-
 .carousel-button--prev {
   left: 1rem;
 }
+
 .carousel-image {
   height: 100%;
   width: 100%;
@@ -104,8 +104,9 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  grid-area: var(--spacing-small);
 
   border: 2px solid black;
   border-radius: var(--border-radius);
@@ -189,6 +190,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: var(--spacing-medium);
   border: 2px dotted black;
   border-radius: var(--border-radius);
@@ -311,7 +313,7 @@
   height: 10%;
   width: 30%;
 
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius);
   border: none;
   background-color: var(--main-background-color);
   color: var(--font-color1);

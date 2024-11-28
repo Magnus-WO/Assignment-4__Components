@@ -53,12 +53,9 @@ const createNavbar = () => {
   createdNavbar.addEventListener("mouseenter", () => {
     createdNavbar.appendChild(linkContainer);
     linkContainer.append(link1, link2, link3, link4);
-    createdNavbar.style.height = "7rem";
   });
   createdNavbar.addEventListener("mouseleave", () => {
     linkContainer.remove();
-
-    createdNavbar.style.height = "5rem";
   });
 };
 
@@ -263,8 +260,6 @@ const createForm = () => {
   radioLabel3.setAttribute("for", "radioInput1");
   radioLabel3.textContent = "large";
 
-  // const radioValue = radioChoice.value;
-
   radioLabel1.append(radioInput1);
   radioLabel2.append(radioInput2);
   radioLabel3.append(radioInput3);
@@ -275,7 +270,7 @@ const createForm = () => {
   optionsContainer.classList.add("form-elements__container");
 
   const optionsHeader = document.createElement("h3");
-  optionsHeader.textContent = "select an item from the list:";
+  optionsHeader.textContent = "Select an item from the list:";
 
   const optionSelect = document.createElement("select");
   optionSelect.setAttribute("id", "select");

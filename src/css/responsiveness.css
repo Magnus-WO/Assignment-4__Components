@@ -1,0 +1,117 @@
+@media screen and (max-width: 786px) {
+  .card-image {
+    width: 100%;
+  }
+
+  .modal-container {
+    width: 20rem;
+    height: 10rem;
+  }
+}
+
+@media screen and (max-width: 619px) {
+  .component__showcase {
+    /* text-align: center; */
+    padding: var(--spacing-small);
+  }
+
+  .showcase__navbar {
+    width: 20rem;
+    height: 10rem;
+
+    font-size: var(--font-size-base);
+  }
+  .navbar__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-grow: 1;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .showcase__navbar {
+    width: 7rem;
+    height: 15rem;
+
+    font-size: var(--font-size-base);
+  }
+  .navbar__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-grow: 1;
+  }
+  .navbar__button {
+    font-size: var(--font-size-base);
+  }
+  .carousel {
+    width: 100%;
+  }
+  .card {
+    width: 80%;
+  }
+  .card p {
+    font-size: var(--font-size-base);
+  }
+
+  .modal-container {
+    width: 15rem;
+    height: 7rem;
+  }
+
+  .modal-container p {
+    font-size: var(--font-size-base);
+  }
+  .alert__button {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .navbar__button {
+    font-size: var(--font-size-small);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card-image {
+    height: 50%;
+  }
+  .created-button {
+    width: 10rem;
+  }
+
+  .form {
+    height: 100%;
+  }
+
+  .form__feedback {
+    width: 100%;
+    text-align: center;
+    line-break: normal;
+  }
+
+  .media__image {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .audio-player {
+    width: 12rem;
+  }
+
+  .media__button-container {
+    flex-direction: column;
+    padding-top: var(--spacing-small);
+    gap: var(--spacing-medium);
+  }
+}
