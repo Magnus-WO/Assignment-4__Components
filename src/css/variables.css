@@ -3,10 +3,10 @@
   --main-background-color: #2164c9;
   --secondary-background-color: #d2d1d1;
   --font-color1: white;
+  --font-color2: black;
 
-  --component-default-color: #e8e8e8;
-  --component-hover-color: white;
-  --component-active-color: #b5b3b3;
+  --button-background-color-2: rgba(0, 0, 0, 0.1);
+  --button-background-color-hover: rgba(0, 0, 0, 0.5);
 
   /* font-size */
   --font-size-base: 1rem;

@@ -45,9 +45,21 @@ const createNavbar = () => {
   link4.setAttribute("href", "");
   link4.textContent = "The Useless Web";
 
-  createdNavbar.append(navbarHeader, link1, link2, link3, link4);
+  const linkContainer = document.createElement("div");
+  linkContainer.classList.add("navbar__links");
 
-  createdNavbar.addEventListener("");
+  createdNavbar.append(navbarHeader);
+
+  createdNavbar.addEventListener("mouseenter", () => {
+    createdNavbar.appendChild(linkContainer);
+    linkContainer.append(link1, link2, link3, link4);
+    createdNavbar.style.height = "7rem";
+  });
+  createdNavbar.addEventListener("mouseleave", () => {
+    linkContainer.remove();
+
+    createdNavbar.style.height = "5rem";
+  });
 };
 
 // Creating a carousel

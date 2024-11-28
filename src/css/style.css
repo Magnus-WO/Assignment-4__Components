@@ -13,17 +13,33 @@
 /* Navbar------------------------------- */
 .showcase__navbar {
   padding: 1rem;
-  min-height: 10%;
-  width: 60%;
+  height: 5rem;
+  width: 30rem;
 
   display: flex;
-  gap: 1rem;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   border: 2px solid black;
   border-radius: var(--border-radius);
   background-color: var(--secondary-background-color);
+}
+
+.showcase__navbar a {
+  color: var(--font-color2);
+}
+
+.showcase__navbar a:hover {
+  color: var(--font-color1);
+}
+
+.navbar__links {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .component__1:hover {
@@ -44,7 +60,7 @@
 .carousel-button {
   border: none;
   border-radius: var(--border-radius);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--button-background-color-2);
   color: white;
 
   padding: 0.5rem;
@@ -54,12 +70,12 @@
   font-size: large;
 }
 .carousel-button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--button-background-color-hover);
   cursor: pointer;
   scale: 1.1;
 }
 .carousel-button:active {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--button-background-color-hover);
 }
 .carousel-button--next {
   right: 1rem;
@@ -119,7 +135,7 @@
   width: 18rem;
 
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--button-background-color-2);
 }
 .created-button:hover {
   cursor: pointer;
@@ -129,7 +145,7 @@
 .form {
   border: 2px solid black;
   border-radius: var(--border-radius);
-  background-color: white;
+  background-color: var(--secondary-background-color);
   height: 90%;
   width: 60%;
 
@@ -270,7 +286,7 @@
 }
 
 .modal-container button:hover {
-  background-color: black;
+  background-color: var(--button-background-color-hover);
   opacity: 0.5;
   color: var(--component-hover-color);
 }
