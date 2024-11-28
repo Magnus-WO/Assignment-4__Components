@@ -1,3 +1,8 @@
+@font-face {
+  font-family: lato;
+  src: url(../assets/fonts/Lato-Regular.ttf);
+}
+
 .navbar {
   background-color: var(--main-background-color);
   height: 100vh;
@@ -24,6 +29,7 @@
   color: var(--font-color1);
   font-size: var(--font-size-medium);
   width: auto;
+  font-family: lato;
 }
 
 .navbar__button:hover {
