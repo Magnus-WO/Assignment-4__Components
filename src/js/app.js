@@ -133,6 +133,7 @@ const createCarousel = () => {
       }
       slides[newIndex].dataset.active = true;
       delete activeSlide.dataset.active;
+      //This part of the code has been taken from this url https://www.youtube.com/watch?v=9HcxHDS2w1s&t=724s.
     });
   });
 };
