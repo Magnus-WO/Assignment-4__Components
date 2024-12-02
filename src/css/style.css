@@ -99,8 +99,8 @@
 
 /* Card------------------------------- */
 .card {
-  height: 60%;
-  width: 40%;
+  height: 35%;
+  width: 20%;
 
   display: flex;
   flex-direction: column;
@@ -113,18 +113,21 @@
   padding: var(--spacing-medium);
 
   background-color: var(--secondary-background-color);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-base);
   text-align: center;
 }
 
-.card:hover {
-  scale: 1.1;
+.card--hover {
   box-shadow: 10px 10px 20px black;
 }
 
+.card--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
 .card-image {
   height: 70%;
-  width: 65%;
+  width: 100%;
   border-radius: var(--border-radius);
 }
 
@@ -138,6 +141,15 @@
   font-size: 1rem;
   background-color: var(--button-background-color-2);
 }
+.created-button--hover {
+  box-shadow: 5px 5px 20px black;
+}
+
+.created-button--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 .created-button:hover {
   cursor: pointer;
 }

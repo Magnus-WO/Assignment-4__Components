@@ -1,4 +1,68 @@
 @media screen and (max-width: 786px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navbar__buttons-container {
+    width: 30%;
+  }
+  .navbar__buttons-select {
+    height: 100%;
+  }
+  .navbar__toggle-button {
+    visibility: visible;
+  }
+  .navbar__buttons-select {
+    position: absolute;
+    top: 0;
+    left: -1000px;
+    width: 50%;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+
+    background-color: var(--main-background-color);
+  }
+  .navbar__links {
+    position: absolute;
+    top: 0;
+    left: -1000px;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+
+    background-color: var(--primary-color);
+  }
+
+  .navbar__links--active {
+    left: 0;
+  }
+  .navbar__links:visited {
+    color: var(--text-color);
+  }
+
+  .navbar__toggle-button {
+    visibility: visible;
+  }
+  .carousel {
+    width: 70%;
+  }
+  .component__showcase {
+    width: 100%;
+  }
+
   .card-image {
     width: 100%;
   }
@@ -35,7 +99,18 @@
   }
 }
 
+@media screen and (max-width: 580px) {
+  .navbar__links {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  .component__showcase {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
   .showcase__navbar {
     width: 7rem;
     height: 15rem;
@@ -57,7 +132,8 @@
     width: 100%;
   }
   .card {
-    width: 80%;
+    width: 50%;
+    height: 30%;
   }
   .card p {
     font-size: var(--font-size-base);
@@ -77,15 +153,15 @@
 }
 
 @media screen and (max-width: 390px) {
-  .navbar__button {
+  /* .navbar__button {
     font-size: var(--font-size-small);
-  }
+  } */
 }
 
 @media screen and (max-width: 350px) {
-  .card-image {
+  /* .card-image {
     height: 50%;
-  }
+  } */
   .created-button {
     width: 10rem;
   }

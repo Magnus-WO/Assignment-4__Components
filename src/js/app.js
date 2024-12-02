@@ -8,6 +8,12 @@ const mediaButton = document.querySelector(".navbar__button--media-controller");
 const modalButton = document.querySelector(".navbar__button--modal");
 const alertButton = document.querySelector(".navbar__button--alert");
 
+const navbarContainer = document.querySelector(".navbar__buttons-select");
+const toggleMenuButton = document.querySelector(".navbar__toggle-button");
+toggleMenuButton.addEventListener("click", () => {
+  navbarContainer.classList.toggle("navbar__links--active");
+});
+
 // Fetching and appending the showcase section
 const main = document.querySelector("main");
 const showcaseSection = document.querySelector(".component__showcase");
@@ -18,6 +24,8 @@ main.append(showcaseSection);
 // Creating a navbar
 const createNavbar = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
+
   const createdNavbar = document.createElement("nav");
   createdNavbar.classList.add("showcase__navbar");
   showcaseSection.appendChild(createdNavbar);
@@ -62,6 +70,7 @@ const createNavbar = () => {
 // Creating a carousel
 const createCarousel = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
 
   const carouselHeader = document.createElement("h3");
   carouselHeader.textContent = "This is a carousel";
@@ -140,50 +149,78 @@ const createCarousel = () => {
 // Creating a card
 const createCard = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "row";
 
-  const card = document.createElement("div");
-  card.classList.add("card");
-  showcaseSection.appendChild(card);
+  //Default card
+  const cardDefault = document.createElement("div");
+  cardDefault.classList.add("card");
+  showcaseSection.append(cardDefault);
 
   const cardImage = document.createElement("img");
   cardImage.setAttribute("src", "./assets/images/Dawn@0.5x.png");
   cardImage.classList.add("card-image");
   const cardParagraph1 = document.createElement("p");
-  cardParagraph1.textContent = "This is a card.";
+  cardParagraph1.textContent = "This is a default card.";
+
+  //Hovered card
+  const cardHover = document.createElement("div");
+  cardHover.classList.add("card");
+  cardHover.classList.add("card--hover");
+  showcaseSection.append(cardHover);
+  const cardHoverImage = document.createElement("img");
+  cardHoverImage.setAttribute("src", "./assets/images/Dawn@0.5x.png");
+  cardHoverImage.classList.add("card-image");
+
   const cardParagraph2 = document.createElement("p");
-  cardParagraph2.textContent =
-    "It is usually used to contain elements that are related to each other.";
-  card.append(cardImage, cardParagraph1, cardParagraph2);
+  cardParagraph2.textContent = "This is a hovered card.";
+
+  //Disabled card
+  const cardDisabled = document.createElement("div");
+  cardDisabled.classList.add("card");
+  cardDisabled.classList.add("card--hover");
+  showcaseSection.append(cardDisabled);
+
+  const cardDisabledImage = document.createElement("img");
+  cardDisabledImage.setAttribute("src", "./assets/images/Dawn@0.5x.png");
+  cardDisabledImage.classList.add("card-image");
+
+  const cardParagraph3 = document.createElement("p");
+  cardParagraph3.textContent = "This is a disabled card.";
+
+  cardDisabled.append(cardDisabledImage, cardParagraph3);
+  cardDefault.append(cardImage, cardParagraph1);
+  cardHover.append(cardHoverImage, cardParagraph2);
 };
 
 // Creating a button
 const createButton = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
 
-  const createdButton = document.createElement("button");
-  createdButton.classList.add("created-button");
-  createdButton.textContent = "I am an idle button, try hovering over me!";
-  showcaseSection.appendChild(createdButton);
+  //Default button
+  const createdButtonDefault = document.createElement("button");
+  createdButtonDefault.classList.add("created-button");
+  createdButtonDefault.textContent = "I am a default button";
+  showcaseSection.appendChild(createdButtonDefault);
 
-  createdButton.addEventListener("mouseenter", () => {
-    createdButton.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-    createdButton.textContent = "You are hovering over me, try clicking me!";
-  });
-  createdButton.addEventListener("mouseleave", () => {
-    createdButton.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
-    createdButton.style.color = "black";
-    createdButton.textContent = "I am an idle button, try hovering over me!";
-  });
+  //Hovered button
+  const createdButtonHover = document.createElement("button");
+  createdButtonHover.classList.add("created-button");
+  createdButtonHover.classList.add("created-button--hover");
+  createdButtonHover.textContent = "I am a hovered button";
+  showcaseSection.appendChild(createdButtonHover);
 
-  createdButton.addEventListener("click", () => {
-    createdButton.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    createdButton.style.color = "white";
-    createdButton.textContent = "You clicked me!";
-  });
+  //Disabled button
+  const createdButtonDisabled = document.createElement("button");
+  createdButtonDisabled.classList.add("created-button");
+  createdButtonDisabled.classList.add("created-button--disabled");
+  createdButtonDisabled.textContent = "I am a disabled button";
+  showcaseSection.appendChild(createdButtonDisabled);
 };
 
 const createForm = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
 
   const form = document.createElement("form");
   form.classList.add("form");
@@ -337,6 +374,8 @@ const createForm = () => {
 
 const createMediaController = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
+
   const audioArray = [
     {
       title: "Dawn",
@@ -430,6 +469,7 @@ const createMediaController = () => {
 
 const createModal = () => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
   //Creating the modal components
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal-container");
@@ -461,6 +501,7 @@ const createModal = () => {
 
 const createAlert = (e) => {
   showcaseSection.textContent = "";
+  showcaseSection.style.flexDirection = "column";
 
   const button = document.createElement("button");
   button.classList.add("alert__button");

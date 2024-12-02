@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/responsiveness.css" />
+    <link rel="stylesheet" href="./css/responsiveness_2.css" />
     <title>Components</title>
   </head>
   <body>
@@ -15,18 +19,29 @@
       <!-- Navbar -->
       <nav class="navbar">
         <div class="navbar__buttons-container">
-          <button class="navbar__button navbar__button--navbar">Navbar</button>
-          <button class="navbar__button navbar__button--carousel">
-            Carousel
-          </button>
-          <button class="navbar__button navbar__button--card">Card</button>
-          <button class="navbar__button navbar__button--button">Button</button>
-          <button class="navbar__button navbar__button--form">Form</button>
-          <button class="navbar__button navbar__button--media-controller">
-            Media controller
-          </button>
-          <button class="navbar__button navbar__button--modal">Modal</button>
-          <button class="navbar__button navbar__button--alert">Alert</button>
+          <div class="navbar__toggle-button-container">
+            <button class="navbar__toggle-button">
+              <i class="fa-solid fa-bars fa-2x navbar__toggle-logo"></i>
+            </button>
+          </div>
+          <div class="navbar__buttons-select">
+            <button class="navbar__button navbar__button--navbar">
+              Navbar
+            </button>
+            <button class="navbar__button navbar__button--carousel">
+              Carousel
+            </button>
+            <button class="navbar__button navbar__button--card">Card</button>
+            <button class="navbar__button navbar__button--button">
+              Button
+            </button>
+            <button class="navbar__button navbar__button--form">Form</button>
+            <button class="navbar__button navbar__button--media-controller">
+              Media controller
+            </button>
+            <button class="navbar__button navbar__button--modal">Modal</button>
+            <button class="navbar__button navbar__button--alert">Alert</button>
+          </div>
         </div>
       </nav>
       <!-- Showcase section -->
