@@ -11,3 +11,6 @@ This is also commented on in the JS file
 
 ##license
 Only allowed for use in education
+
+##Link to deployment
+https://assignment-4-components-1nss8fg1g-magnus-wos-projects.vercel.app/
