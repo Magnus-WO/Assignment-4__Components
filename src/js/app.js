@@ -177,7 +177,7 @@ const createCard = () => {
   //Disabled card
   const cardDisabled = document.createElement("div");
   cardDisabled.classList.add("card");
-  cardDisabled.classList.add("card--hover");
+  cardDisabled.classList.add("card--disabled");
   showcaseSection.append(cardDisabled);
 
   const cardDisabledImage = document.createElement("img");
