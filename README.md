@@ -13,7 +13,7 @@ This is also commented on in the JS file
 Only allowed for use in education
 
 ##Link to deployment
-https://assignment-4-components-1nss8fg1g-magnus-wos-projects.vercel.app/
+https://assignment-4-components.vercel.app/
 
 ##Link to GitHub repo:
 https://github.com/Magnus-WO/Assignment-4__Components
